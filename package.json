@@ -1,6 +1,6 @@
 {
   "name": "machobot-database",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A database for Macho.",
   "main": "out/index.js",
   "dependencies": {
