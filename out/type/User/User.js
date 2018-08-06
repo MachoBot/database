@@ -42,12 +42,12 @@ __decorate([
     __metadata("design:type", Boolean)
 ], User.prototype, "banned", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], User.prototype, "dateCreated", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], User.prototype, "dateLastMessage", void 0);

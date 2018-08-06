@@ -22,11 +22,11 @@ export class User {
   @IsBoolean()
   banned: boolean
 
-  @Column('number')
+  @Column('integer')
   @IsNumber()
   dateCreated: number
 
-  @Column('number')
+  @Column('integer')
   @IsNumber()
   dateLastMessage: number
 

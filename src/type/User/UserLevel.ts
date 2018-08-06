@@ -6,15 +6,15 @@ import { User } from "./User"
 export class UserLevel {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('number')
+  @Column('integer')
   @IsNumber()
   xp: number
 
-  @Column('number')
+  @Column('integer')
   @IsNumber()
   level: number
 
-  @Column('number')
+  @Column('integer')
   @IsNumber()
   timestamp: number
 

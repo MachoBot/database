@@ -23,15 +23,15 @@ __decorate([
     __metadata("design:type", Number)
 ], UserBalance.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     __metadata("design:type", Number)
 ], UserBalance.prototype, "netWorth", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     __metadata("design:type", Number)
 ], UserBalance.prototype, "balance", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     __metadata("design:type", Number)
 ], UserBalance.prototype, "dateClaimedDailies", void 0);
 __decorate([

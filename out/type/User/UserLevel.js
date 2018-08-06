@@ -24,17 +24,17 @@ __decorate([
     __metadata("design:type", Number)
 ], UserLevel.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], UserLevel.prototype, "xp", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], UserLevel.prototype, "level", void 0);
 __decorate([
-    typeorm_1.Column('number'),
+    typeorm_1.Column('integer'),
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], UserLevel.prototype, "timestamp", void 0);

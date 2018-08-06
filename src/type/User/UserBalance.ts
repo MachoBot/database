@@ -3,15 +3,15 @@ import { User } from "./User"
 
 @Entity()
 export class UserBalance {
-  @PrimaryGeneratedColumn()id: number
+  @PrimaryGeneratedColumn() id: number
 
-  @Column('number')
+  @Column('integer')
   netWorth: number
 
-  @Column('number')
+  @Column('integer')
   balance: number
 
-  @Column('number')
+  @Column('integer')
   dateClaimedDailies: number
 
   @OneToOne(type => User, user => user.balance)
