@@ -35,7 +35,6 @@ __decorate([
     __metadata("design:type", Number)
 ], UserBalance.prototype, "dateClaimedDailies", void 0);
 __decorate([
-    typeorm_1.Column(),
     typeorm_1.OneToOne(type => _1.User, user => user.balance),
     __metadata("design:type", _1.User)
 ], UserBalance.prototype, "user", void 0);

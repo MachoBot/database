@@ -18,7 +18,6 @@ export class UserLevel {
   @IsNumber()
   timestamp: number
 
-  @Column()
   @OneToOne(type => User, user => user.balance)
   user: User
 

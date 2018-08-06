@@ -10,7 +10,6 @@ export class UserLinks {
   @IsString()
   steamId: string
 
-  @Column()
   @OneToOne(type => User, user => user.balance)
   user: User
 }

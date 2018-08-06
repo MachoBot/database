@@ -14,7 +14,6 @@ export class UserBalance {
   @Column('varchar')
   dateClaimedDailies: number
 
-  @Column()
   @OneToOne(type => User, user => user.balance)
   user: User
 
