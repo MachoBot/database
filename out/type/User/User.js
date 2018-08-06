@@ -11,9 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
-const UserBalance_1 = require("./UserBalance");
-const UserLevel_1 = require("./UserLevel");
-const UserLinks_1 = require("./UserLinks");
+const _1 = require(".");
 let User = class User {
     constructor(user) {
         if (user) {
@@ -52,22 +50,22 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "dateLastMessage", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => UserBalance_1.UserBalance, userBalance => userBalance.user, {
+    typeorm_1.OneToOne(type => _1.UserBalance, userBalance => userBalance.user, {
         cascade: true
     }),
-    __metadata("design:type", UserBalance_1.UserBalance)
+    __metadata("design:type", _1.UserBalance)
 ], User.prototype, "balance", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => UserLevel_1.UserLevel, userLevel => userLevel.user, {
+    typeorm_1.OneToOne(type => _1.UserLevel, userLevel => userLevel.user, {
         cascade: true
     }),
-    __metadata("design:type", UserLevel_1.UserLevel)
+    __metadata("design:type", _1.UserLevel)
 ], User.prototype, "level", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => UserLinks_1.UserLinks, userLinks => userLinks.user, {
+    typeorm_1.OneToOne(type => _1.UserLinks, userLinks => userLinks.user, {
         cascade: true
     }),
-    __metadata("design:type", UserLinks_1.UserLinks)
+    __metadata("design:type", _1.UserLinks)
 ], User.prototype, "links", void 0);
 __decorate([
     typeorm_1.Column('boolean'),
@@ -75,7 +73,9 @@ __decorate([
     __metadata("design:type", Boolean)
 ], User.prototype, "admin", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
+    typeorm_1.Column('varchar', {
+        select: false
+    }),
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], User.prototype, "accessToken", void 0);

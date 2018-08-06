@@ -1,6 +1,4 @@
-import { UserBalance } from "./UserBalance";
-import { UserLevel } from "./UserLevel";
-import { UserLinks } from "./UserLinks";
+import { UserBalance, UserLevel, UserLinks } from ".";
 export declare class User {
     id: string;
     name: string;

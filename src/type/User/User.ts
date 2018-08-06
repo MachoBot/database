@@ -1,8 +1,6 @@
 import { PrimaryColumn, Column, OneToOne, Entity } from "typeorm"
 import { IsString, IsBoolean, IsNumber } from 'class-validator'
-import { UserBalance } from "./UserBalance"
-import { UserLevel } from "./UserLevel"
-import { UserLinks } from "./UserLinks";
+import { UserBalance, UserLevel, UserLinks } from "."
 
 @Entity()
 export class User {
@@ -49,7 +47,9 @@ export class User {
   @IsBoolean()
   admin: boolean
 
-  @Column('varchar')
+  @Column('varchar', {
+    select: false
+  })
   @IsString()
   accessToken: string
 
