@@ -6,7 +6,7 @@ import { User } from "./User"
 export class UserLinks {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('string')
+  @Column('varchar')
   @IsString()
   steamId: string
 

@@ -19,7 +19,7 @@ __decorate([
     __metadata("design:type", Number)
 ], UserLinks.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('string'),
+    typeorm_1.Column('varchar'),
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], UserLinks.prototype, "steamId", void 0);
