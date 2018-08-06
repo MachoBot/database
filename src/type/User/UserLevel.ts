@@ -13,7 +13,7 @@ export class UserLevel {
   @IsNumber()
   level: number
 
-  @Column('integer')
+  @Column('varchar')
   @IsNumber()
   timestamp: number
 

@@ -10,7 +10,7 @@ export class UserBalance {
   @Column('integer')
   balance: number
 
-  @Column('integer')
+  @Column('varchar')
   dateClaimedDailies: number
 
   constructor () {

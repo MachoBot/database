@@ -30,7 +30,7 @@ __decorate([
     __metadata("design:type", Number)
 ], UserBalance.prototype, "balance", void 0);
 __decorate([
-    typeorm_1.Column('integer'),
+    typeorm_1.Column('varchar'),
     __metadata("design:type", Number)
 ], UserBalance.prototype, "dateClaimedDailies", void 0);
 UserBalance = __decorate([
