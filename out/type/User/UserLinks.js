@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const User_1 = require("./User");
-class UserLinks {
-}
+let UserLinks = class UserLinks {
+};
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
@@ -27,4 +27,7 @@ __decorate([
     typeorm_1.OneToOne(type => User_1.User, user => user.links),
     __metadata("design:type", User_1.User)
 ], UserLinks.prototype, "user", void 0);
+UserLinks = __decorate([
+    typeorm_1.Entity()
+], UserLinks);
 exports.UserLinks = UserLinks;

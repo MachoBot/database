@@ -14,13 +14,13 @@ const class_validator_1 = require("class-validator");
 const UserBalance_1 = require("./UserBalance");
 const UserLevel_1 = require("./UserLevel");
 const UserLinks_1 = require("./UserLinks");
-class User {
+let User = class User {
     constructor(user) {
         if (user) {
             Object.assign(this, user);
         }
     }
-}
+};
 __decorate([
     typeorm_1.PrimaryColumn(),
     class_validator_1.IsString(),
@@ -79,4 +79,8 @@ __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], User.prototype, "accessToken", void 0);
+User = __decorate([
+    typeorm_1.Entity(),
+    __metadata("design:paramtypes", [User])
+], User);
 exports.User = User;

@@ -12,13 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const User_1 = require("./User");
-class UserLevel {
+let UserLevel = class UserLevel {
     constructor() {
         this.xp = 0;
         this.level = 0;
         this.timestamp = new Date().getTime();
     }
-}
+};
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
@@ -42,4 +42,8 @@ __decorate([
     typeorm_1.OneToOne(type => User_1.User, user => user.level),
     __metadata("design:type", User_1.User)
 ], UserLevel.prototype, "user", void 0);
+UserLevel = __decorate([
+    typeorm_1.Entity(),
+    __metadata("design:paramtypes", [])
+], UserLevel);
 exports.UserLevel = UserLevel;

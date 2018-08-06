@@ -11,13 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const User_1 = require("./User");
-class UserBalance {
+let UserBalance = class UserBalance {
     constructor() {
         this.netWorth = 0;
         this.balance = 0;
         this.dateClaimedDailies = new Date().getTime();
     }
-}
+};
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
@@ -39,4 +39,8 @@ __decorate([
     typeorm_1.JoinColumn(),
     __metadata("design:type", User_1.User)
 ], UserBalance.prototype, "user", void 0);
+UserBalance = __decorate([
+    typeorm_1.Entity(),
+    __metadata("design:paramtypes", [])
+], UserBalance);
 exports.UserBalance = UserBalance;
