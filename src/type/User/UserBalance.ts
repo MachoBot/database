@@ -1,6 +1,7 @@
-import { Column, OneToOne, JoinColumn, PrimaryGeneratedColumn } from "typeorm"
+import { Column, OneToOne, JoinColumn, PrimaryGeneratedColumn, Entity } from "typeorm"
 import { User } from "./User"
 
+@Entity()
 export class UserBalance {
   @PrimaryGeneratedColumn()id: number
 

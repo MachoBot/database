@@ -40,4 +40,3 @@ __decorate([
     __metadata("design:type", User_1.User)
 ], UserBalance.prototype, "user", void 0);
 exports.UserBalance = UserBalance;
-//# sourceMappingURL=UserBalance.js.map

@@ -28,4 +28,3 @@ __decorate([
     __metadata("design:type", User_1.User)
 ], UserLinks.prototype, "user", void 0);
 exports.UserLinks = UserLinks;
-//# sourceMappingURL=UserLinks.js.map

@@ -1,7 +1,8 @@
-import { PrimaryGeneratedColumn, Column, OneToOne } from "typeorm"
+import { PrimaryGeneratedColumn, Column, OneToOne, Entity } from "typeorm"
 import { IsNumber } from "class-validator"
 import { User } from "./User"
 
+@Entity()
 export class UserLevel {
   @PrimaryGeneratedColumn() id: number
 

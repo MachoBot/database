@@ -5,4 +5,3 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 __export(require("./User"));
-//# sourceMappingURL=index.js.map

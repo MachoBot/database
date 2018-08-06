@@ -1,9 +1,10 @@
-import { PrimaryColumn, Column, OneToOne } from "typeorm"
+import { PrimaryColumn, Column, OneToOne, Entity } from "typeorm"
 import { IsString, IsBoolean, IsNumber } from 'class-validator'
 import { UserBalance } from "./UserBalance"
 import { UserLevel } from "./UserLevel"
 import { UserLinks } from "./UserLinks";
 
+@Entity()
 export class User {
   @PrimaryColumn()
   @IsString()

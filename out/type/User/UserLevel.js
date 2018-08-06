@@ -43,4 +43,3 @@ __decorate([
     __metadata("design:type", User_1.User)
 ], UserLevel.prototype, "user", void 0);
 exports.UserLevel = UserLevel;
-//# sourceMappingURL=UserLevel.js.map

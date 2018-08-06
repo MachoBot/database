@@ -80,4 +80,3 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "accessToken", void 0);
 exports.User = User;
-//# sourceMappingURL=User.js.map
