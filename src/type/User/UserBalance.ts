@@ -1,4 +1,5 @@
-import { Column, PrimaryGeneratedColumn, Entity } from "typeorm"
+import { Column, PrimaryGeneratedColumn, Entity, OneToOne } from "typeorm"
+import { User } from "."
 
 @Entity()
 export class UserBalance {
@@ -12,6 +13,10 @@ export class UserBalance {
 
   @Column('varchar')
   dateClaimedDailies: number
+
+  @Column()
+  @OneToOne(type => User, user => user.balance)
+  user: User
 
   constructor () {
     this.netWorth = 0

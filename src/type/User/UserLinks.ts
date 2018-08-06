@@ -1,5 +1,6 @@
-import { PrimaryGeneratedColumn, Column, Entity } from "typeorm"
+import { PrimaryGeneratedColumn, Column, Entity, OneToOne } from "typeorm"
 import { IsString } from "class-validator"
+import { User } from "."
 
 @Entity()
 export class UserLinks {
@@ -8,4 +9,8 @@ export class UserLinks {
   @Column('varchar')
   @IsString()
   steamId: string
+
+  @Column()
+  @OneToOne(type => User, user => user.balance)
+  user: User
 }

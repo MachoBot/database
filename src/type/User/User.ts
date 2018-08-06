@@ -28,19 +28,19 @@ export class User {
   @IsNumber()
   dateLastMessage: number
 
-  @OneToOne(type => UserBalance, {
+  @OneToOne(type => UserBalance, balance => balance.user, {
     cascade: true
   })
   @JoinColumn()
   balance: UserBalance
 
-  @OneToOne(type => UserLevel, {
+  @OneToOne(type => UserLevel, level => level.user, {
     cascade: true
   })
   @JoinColumn()
   level: UserLevel
 
-  @OneToOne(type => UserLinks, {
+  @OneToOne(type => UserLinks, links => links.user, {
     cascade: true
   })
   @JoinColumn()

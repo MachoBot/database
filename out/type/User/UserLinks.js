@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
+const _1 = require(".");
 let UserLinks = class UserLinks {
 };
 __decorate([
@@ -22,6 +23,11 @@ __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], UserLinks.prototype, "steamId", void 0);
+__decorate([
+    typeorm_1.Column(),
+    typeorm_1.OneToOne(type => _1.User, user => user.balance),
+    __metadata("design:type", _1.User)
+], UserLinks.prototype, "user", void 0);
 UserLinks = __decorate([
     typeorm_1.Entity()
 ], UserLinks);
