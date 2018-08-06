@@ -1,4 +1,4 @@
-import { PrimaryColumn, Column, OneToOne, Entity } from "typeorm"
+import { PrimaryColumn, Column, OneToOne, Entity, JoinColumn } from "typeorm"
 import { IsString, IsBoolean, IsNumber } from 'class-validator'
 import { UserBalance, UserLevel, UserLinks } from "."
 
@@ -28,19 +28,22 @@ export class User {
   @IsNumber()
   dateLastMessage: number
 
-  @OneToOne(type => UserBalance, userBalance => userBalance.user, {
+  @OneToOne(type => UserBalance, {
     cascade: true
   })
+  @JoinColumn()
   balance: UserBalance
 
-  @OneToOne(type => UserLevel, userLevel => userLevel.user, {
+  @OneToOne(type => UserLevel, {
     cascade: true
   })
+  @JoinColumn()
   level: UserLevel
 
-  @OneToOne(type => UserLinks, userLinks => userLinks.user, {
+  @OneToOne(type => UserLinks, {
     cascade: true
   })
+  @JoinColumn()
   links: UserLinks
 
   @Column('boolean')

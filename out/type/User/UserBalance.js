@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const User_1 = require("./User");
 let UserBalance = class UserBalance {
     constructor() {
         this.netWorth = 0;
@@ -34,11 +33,6 @@ __decorate([
     typeorm_1.Column('integer'),
     __metadata("design:type", Number)
 ], UserBalance.prototype, "dateClaimedDailies", void 0);
-__decorate([
-    typeorm_1.OneToOne(type => User_1.User, user => user.balance),
-    typeorm_1.JoinColumn(),
-    __metadata("design:type", User_1.User)
-], UserBalance.prototype, "user", void 0);
 UserBalance = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [])

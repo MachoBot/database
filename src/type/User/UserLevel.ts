@@ -1,6 +1,5 @@
-import { PrimaryGeneratedColumn, Column, OneToOne, Entity } from "typeorm"
+import { PrimaryGeneratedColumn, Column, Entity } from "typeorm"
 import { IsNumber } from "class-validator"
-import { User } from "./User"
 
 @Entity()
 export class UserLevel {
@@ -17,9 +16,6 @@ export class UserLevel {
   @Column('integer')
   @IsNumber()
   timestamp: number
-
-  @OneToOne(type => User, user => user.level)
-  user: User
 
   constructor () {
     this.xp = 0

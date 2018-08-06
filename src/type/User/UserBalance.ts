@@ -1,5 +1,4 @@
-import { Column, OneToOne, JoinColumn, PrimaryGeneratedColumn, Entity } from "typeorm"
-import { User } from "./User"
+import { Column, PrimaryGeneratedColumn, Entity } from "typeorm"
 
 @Entity()
 export class UserBalance {
@@ -13,10 +12,6 @@ export class UserBalance {
 
   @Column('integer')
   dateClaimedDailies: number
-
-  @OneToOne(type => User, user => user.balance)
-  @JoinColumn()
-  user: User
 
   constructor () {
     this.netWorth = 0

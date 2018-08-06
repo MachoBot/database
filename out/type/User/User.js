@@ -50,21 +50,24 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "dateLastMessage", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.UserBalance, userBalance => userBalance.user, {
+    typeorm_1.OneToOne(type => _1.UserBalance, {
         cascade: true
     }),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", _1.UserBalance)
 ], User.prototype, "balance", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.UserLevel, userLevel => userLevel.user, {
+    typeorm_1.OneToOne(type => _1.UserLevel, {
         cascade: true
     }),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", _1.UserLevel)
 ], User.prototype, "level", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.UserLinks, userLinks => userLinks.user, {
+    typeorm_1.OneToOne(type => _1.UserLinks, {
         cascade: true
     }),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", _1.UserLinks)
 ], User.prototype, "links", void 0);
 __decorate([

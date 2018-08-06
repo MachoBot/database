@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
-const User_1 = require("./User");
 let UserLevel = class UserLevel {
     constructor() {
         this.xp = 0;
@@ -38,10 +37,6 @@ __decorate([
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], UserLevel.prototype, "timestamp", void 0);
-__decorate([
-    typeorm_1.OneToOne(type => User_1.User, user => user.level),
-    __metadata("design:type", User_1.User)
-], UserLevel.prototype, "user", void 0);
 UserLevel = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [])
