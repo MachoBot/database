@@ -6,9 +6,9 @@ import { User } from "."
 export class UserLinks {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar')
+  @Column('varchar', { nullable: true })
   @IsString()
-  steamId: string
+  steamId: string | null
 
   @OneToOne(type => User, user => user.balance)
   user: User

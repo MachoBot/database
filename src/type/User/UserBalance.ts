@@ -11,8 +11,8 @@ export class UserBalance {
   @Column('integer')
   balance: number
 
-  @Column('varchar')
-  dateClaimedDailies: number
+  @Column('varchar', { nullable: true })
+  dateClaimedDailies: number | null
 
   @OneToOne(type => User, user => user.balance)
   user: User
@@ -20,6 +20,6 @@ export class UserBalance {
   constructor () {
     this.netWorth = 0
     this.balance = 0
-    this.dateClaimedDailies = new Date().getTime()
+    this.dateClaimedDailies = null
   }
 }

@@ -29,19 +29,22 @@ export class User {
   dateLastMessage: number
 
   @OneToOne(type => UserBalance, balance => balance.user, {
-    cascade: true
+    cascade: true,
+    onDelete: 'CASCADE'
   })
   @JoinColumn()
   balance: UserBalance
 
   @OneToOne(type => UserLevel, level => level.user, {
-    cascade: true
+    cascade: true,
+    onDelete: 'CASCADE'
   })
   @JoinColumn()
   level: UserLevel
 
   @OneToOne(type => UserLinks, links => links.user, {
-    cascade: true
+    cascade: true,
+    onDelete: 'CASCADE'
   })
   @JoinColumn()
   links: UserLinks
@@ -60,5 +63,8 @@ export class User {
     if (user) {
       Object.assign(this, user)
     }
+
+    this.dateCreated = new Date().getTime()
+    this.dateLastMessage = new Date().getTime()
   }
 }

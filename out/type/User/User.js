@@ -17,6 +17,8 @@ let User = class User {
         if (user) {
             Object.assign(this, user);
         }
+        this.dateCreated = new Date().getTime();
+        this.dateLastMessage = new Date().getTime();
     }
 };
 __decorate([
@@ -51,21 +53,24 @@ __decorate([
 ], User.prototype, "dateLastMessage", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserBalance, balance => balance.user, {
-        cascade: true
+        cascade: true,
+        onDelete: 'CASCADE'
     }),
     typeorm_1.JoinColumn(),
     __metadata("design:type", _1.UserBalance)
 ], User.prototype, "balance", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserLevel, level => level.user, {
-        cascade: true
+        cascade: true,
+        onDelete: 'CASCADE'
     }),
     typeorm_1.JoinColumn(),
     __metadata("design:type", _1.UserLevel)
 ], User.prototype, "level", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserLinks, links => links.user, {
-        cascade: true
+        cascade: true,
+        onDelete: 'CASCADE'
     }),
     typeorm_1.JoinColumn(),
     __metadata("design:type", _1.UserLinks)

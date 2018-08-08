@@ -19,9 +19,9 @@ __decorate([
     __metadata("design:type", Number)
 ], UserLinks.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
+    typeorm_1.Column('varchar', { nullable: true }),
     class_validator_1.IsString(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], UserLinks.prototype, "steamId", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.User, user => user.balance),

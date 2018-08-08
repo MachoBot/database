@@ -15,7 +15,7 @@ let UserBalance = class UserBalance {
     constructor() {
         this.netWorth = 0;
         this.balance = 0;
-        this.dateClaimedDailies = new Date().getTime();
+        this.dateClaimedDailies = null;
     }
 };
 __decorate([
@@ -31,8 +31,8 @@ __decorate([
     __metadata("design:type", Number)
 ], UserBalance.prototype, "balance", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
-    __metadata("design:type", Number)
+    typeorm_1.Column('varchar', { nullable: true }),
+    __metadata("design:type", Object)
 ], UserBalance.prototype, "dateClaimedDailies", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.User, user => user.balance),
