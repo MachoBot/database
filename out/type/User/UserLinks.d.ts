@@ -1,6 +1,7 @@
-import { User } from ".";
+import { User } from '.';
 export declare class UserLinks {
     id: number;
-    steamId: string | null;
+    steamId: string;
     user: User;
+    constructor();
 }

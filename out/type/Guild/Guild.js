@@ -12,26 +12,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const _1 = require(".");
-let UserLinks = class UserLinks {
-    constructor() {
-        this.steamId = '';
+let Guild = class Guild {
+    constructor(guild) {
+        if (guild) {
+            Object.assign(this, guild);
+        }
+        this.dateCreated = new Date().getTime().toString();
     }
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
-    __metadata("design:type", Number)
-], UserLinks.prototype, "id", void 0);
+    typeorm_1.PrimaryColumn(),
+    class_validator_1.IsString(),
+    __metadata("design:type", String)
+], Guild.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column('varchar'),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], UserLinks.prototype, "steamId", void 0);
+], Guild.prototype, "name", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.User, user => user.balance),
-    __metadata("design:type", _1.User)
-], UserLinks.prototype, "user", void 0);
-UserLinks = __decorate([
+    typeorm_1.Column('boolean'),
+    class_validator_1.IsBoolean(),
+    __metadata("design:type", Boolean)
+], Guild.prototype, "banned", void 0);
+__decorate([
+    typeorm_1.Column('varchar'),
+    class_validator_1.IsNumberString(),
+    __metadata("design:type", String)
+], Guild.prototype, "dateCreated", void 0);
+__decorate([
+    typeorm_1.OneToOne(type => _1.GuildSettings, guildSettings => guildSettings.guild),
+    __metadata("design:type", _1.GuildSettings)
+], Guild.prototype, "settings", void 0);
+Guild = __decorate([
     typeorm_1.Entity(),
-    __metadata("design:paramtypes", [])
-], UserLinks);
-exports.UserLinks = UserLinks;
+    __metadata("design:paramtypes", [Guild])
+], Guild);
+exports.Guild = Guild;

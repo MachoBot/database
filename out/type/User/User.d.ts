@@ -1,11 +1,11 @@
-import { UserBalance, UserLevel, UserLinks } from ".";
+import { UserBalance, UserLevel, UserLinks } from '.';
 export declare class User {
     id: string;
     name: string;
     avatarUrl: string;
     banned: boolean;
-    dateCreated: number;
-    dateLastMessage: number;
+    dateCreated: string;
+    dateLastMessage: string;
     balance: UserBalance;
     level: UserLevel;
     links: UserLinks;

@@ -1,5 +1,5 @@
-import { Column, PrimaryGeneratedColumn, Entity, OneToOne } from "typeorm"
-import { User } from "."
+import { Column, PrimaryGeneratedColumn, Entity, OneToOne } from 'typeorm'
+import { User } from '.'
 
 @Entity()
 export class UserBalance {
@@ -12,7 +12,7 @@ export class UserBalance {
   balance: number
 
   @Column('varchar', { nullable: true })
-  dateClaimedDailies: number | null
+  dateClaimedDailies: string | null
 
   @OneToOne(type => User, user => user.balance)
   user: User

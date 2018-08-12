@@ -16,7 +16,7 @@ let UserLevel = class UserLevel {
     constructor() {
         this.xp = 0;
         this.level = 0;
-        this.timestamp = new Date().getTime();
+        this.timestamp = new Date().getTime().toString();
     }
 };
 __decorate([
@@ -35,8 +35,8 @@ __decorate([
 ], UserLevel.prototype, "level", void 0);
 __decorate([
     typeorm_1.Column('varchar'),
-    class_validator_1.IsNumber(),
-    __metadata("design:type", Number)
+    class_validator_1.IsNumberString(),
+    __metadata("design:type", String)
 ], UserLevel.prototype, "timestamp", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.User, user => user.balance),

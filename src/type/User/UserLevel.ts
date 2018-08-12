@@ -1,6 +1,6 @@
-import { PrimaryGeneratedColumn, Column, Entity, OneToOne } from "typeorm"
-import { IsNumber } from "class-validator"
-import { User } from "."
+import { PrimaryGeneratedColumn, Column, Entity, OneToOne } from 'typeorm'
+import { IsNumber, IsNumberString } from 'class-validator'
+import { User } from '.'
 
 @Entity()
 export class UserLevel {
@@ -15,8 +15,8 @@ export class UserLevel {
   level: number
 
   @Column('varchar')
-  @IsNumber()
-  timestamp: number
+  @IsNumberString()
+  timestamp: string
 
   @OneToOne(type => User, user => user.balance)
   user: User
@@ -24,6 +24,6 @@ export class UserLevel {
   constructor () {
     this.xp = 0
     this.level = 0
-    this.timestamp = new Date().getTime()
+    this.timestamp = new Date().getTime().toString()
   }
 }

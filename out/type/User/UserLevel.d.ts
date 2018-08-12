@@ -1,9 +1,9 @@
-import { User } from ".";
+import { User } from '.';
 export declare class UserLevel {
     id: number;
     xp: number;
     level: number;
-    timestamp: number;
+    timestamp: string;
     user: User;
     constructor();
 }

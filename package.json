@@ -1,11 +1,12 @@
 {
   "name": "machobot-database",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A database for Macho.",
   "main": "out/index.js",
   "dependencies": {
     "class-validator": "^0.9.1",
     "reflect-metadata": "^0.1.12",
+    "tslint-config-standard": "^7.1.0",
     "typeorm": "^0.2.7"
   },
   "devDependencies": {

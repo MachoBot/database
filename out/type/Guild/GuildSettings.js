@@ -12,26 +12,38 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const _1 = require(".");
-let UserLinks = class UserLinks {
+let GuildSettings = class GuildSettings {
     constructor() {
-        this.steamId = '';
+        this.suggestionChannel = 'default';
+        this.musicChannel = 'default';
+        this.logChannel = 'default';
     }
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], UserLinks.prototype, "id", void 0);
+], GuildSettings.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column('varchar'),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], UserLinks.prototype, "steamId", void 0);
+], GuildSettings.prototype, "suggestionChannel", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.User, user => user.balance),
-    __metadata("design:type", _1.User)
-], UserLinks.prototype, "user", void 0);
-UserLinks = __decorate([
+    typeorm_1.Column('varchar'),
+    class_validator_1.IsString(),
+    __metadata("design:type", String)
+], GuildSettings.prototype, "musicChannel", void 0);
+__decorate([
+    typeorm_1.Column('varchar'),
+    class_validator_1.IsString(),
+    __metadata("design:type", String)
+], GuildSettings.prototype, "logChannel", void 0);
+__decorate([
+    typeorm_1.OneToOne(type => _1.Guild, guild => guild.settings),
+    __metadata("design:type", _1.Guild)
+], GuildSettings.prototype, "guild", void 0);
+GuildSettings = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [])
-], UserLinks);
-exports.UserLinks = UserLinks;
+], GuildSettings);
+exports.GuildSettings = GuildSettings;

@@ -17,8 +17,8 @@ let User = class User {
         if (user) {
             Object.assign(this, user);
         }
-        this.dateCreated = new Date().getTime();
-        this.dateLastMessage = new Date().getTime();
+        this.dateCreated = new Date().getTime().toString();
+        this.dateLastMessage = new Date().getTime().toString();
     }
 };
 __decorate([
@@ -43,13 +43,13 @@ __decorate([
 ], User.prototype, "banned", void 0);
 __decorate([
     typeorm_1.Column('varchar'),
-    class_validator_1.IsNumber(),
-    __metadata("design:type", Number)
+    class_validator_1.IsNumberString(),
+    __metadata("design:type", String)
 ], User.prototype, "dateCreated", void 0);
 __decorate([
     typeorm_1.Column('varchar'),
-    class_validator_1.IsNumber(),
-    __metadata("design:type", Number)
+    class_validator_1.IsNumberString(),
+    __metadata("design:type", String)
 ], User.prototype, "dateLastMessage", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserBalance, balance => balance.user, {

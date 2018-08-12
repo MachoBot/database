@@ -1,6 +1,6 @@
-import { PrimaryColumn, Column, OneToOne, Entity, JoinColumn } from "typeorm"
-import { IsString, IsBoolean, IsNumber } from 'class-validator'
-import { UserBalance, UserLevel, UserLinks } from "."
+import { PrimaryColumn, Column, OneToOne, Entity, JoinColumn } from 'typeorm'
+import { IsString, IsBoolean, IsNumberString } from 'class-validator'
+import { UserBalance, UserLevel, UserLinks } from '.'
 
 @Entity()
 export class User {
@@ -21,12 +21,12 @@ export class User {
   banned: boolean
 
   @Column('varchar')
-  @IsNumber()
-  dateCreated: number
+  @IsNumberString()
+  dateCreated: string
 
   @Column('varchar')
-  @IsNumber()
-  dateLastMessage: number
+  @IsNumberString()
+  dateLastMessage: string
 
   @OneToOne(type => UserBalance, balance => balance.user, {
     cascade: true,
@@ -64,7 +64,7 @@ export class User {
       Object.assign(this, user)
     }
 
-    this.dateCreated = new Date().getTime()
-    this.dateLastMessage = new Date().getTime()
+    this.dateCreated = new Date().getTime().toString()
+    this.dateLastMessage = new Date().getTime().toString()
   }
 }
