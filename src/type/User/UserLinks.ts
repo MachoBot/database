@@ -10,7 +10,7 @@ export class UserLinks {
   @IsString()
   steamId: string
 
-  @Column('varchar')
+  @Column('varchar', { nullable: true })
   @IsString()
   githubId: string | null
 
