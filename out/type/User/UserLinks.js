@@ -27,6 +27,11 @@ __decorate([
     __metadata("design:type", String)
 ], UserLinks.prototype, "steamId", void 0);
 __decorate([
+    typeorm_1.Column('varchar'),
+    class_validator_1.IsString(),
+    __metadata("design:type", Object)
+], UserLinks.prototype, "githubId", void 0);
+__decorate([
     typeorm_1.OneToOne(type => _1.User, user => user.balance),
     __metadata("design:type", _1.User)
 ], UserLinks.prototype, "user", void 0);

@@ -10,6 +10,10 @@ export class UserLinks {
   @IsString()
   steamId: string
 
+  @Column('varchar')
+  @IsString()
+  githubId: string | null
+
   @OneToOne(type => User, user => user.balance)
   user: User
 
