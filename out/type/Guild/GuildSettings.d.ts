@@ -1,9 +1,10 @@
 import { Guild } from '.';
 export declare class GuildSettings {
     id: number;
-    suggestionChannel: string;
-    musicChannel: string;
-    logChannel: string;
+    suggestionChannel: string | null;
+    musicTextChannel: string | null;
+    musicVoiceChannel: string | null;
+    logChannel: string | null;
     guild: Guild;
     constructor();
 }

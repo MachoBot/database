@@ -6,18 +6,19 @@ import { User } from '.'
 export class UserLinks {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar')
+  @Column('varchar', { nullable: true })
   @IsString()
-  steamId: string
+  steamId: string | null
 
   @Column('varchar', { nullable: true })
   @IsString()
   githubId: string | null
 
-  @OneToOne(type => User, user => user.balance)
+  @OneToOne(type => User, user => user.links)
   user: User
 
   constructor () {
-    this.steamId = ''
+    this.steamId = null
+    this.githubId = null
   }
 }

@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from 'typeorm'
-import { IsString } from 'class-validator'
 import { Guild } from '.'
 
 @Entity()
@@ -7,24 +6,25 @@ export class GuildSettings {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column('varchar')
-  @IsString()
-  suggestionChannel: string
+  @Column('varchar', { nullable: true })
+  suggestionChannel: string | null
 
-  @Column('varchar')
-  @IsString()
-  musicChannel: string
+  @Column('varchar', { nullable: true })
+  musicTextChannel: string | null
 
-  @Column('varchar')
-  @IsString()
-  logChannel: string
+  @Column('varchar', { nullable: true })
+  musicVoiceChannel: string | null
+
+  @Column('varchar', { nullable: true })
+  logChannel: string | null
 
   @OneToOne(type => Guild, guild => guild.settings)
   guild: Guild
 
   constructor () {
-    this.suggestionChannel = 'default'
-    this.musicChannel = 'default'
-    this.logChannel = 'default'
+    this.suggestionChannel = null
+    this.musicTextChannel = null
+    this.musicVoiceChannel = null
+    this.logChannel = null
   }
 }

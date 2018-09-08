@@ -10,13 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const class_validator_1 = require("class-validator");
 const _1 = require(".");
 let GuildSettings = class GuildSettings {
     constructor() {
-        this.suggestionChannel = 'default';
-        this.musicChannel = 'default';
-        this.logChannel = 'default';
+        this.suggestionChannel = null;
+        this.musicTextChannel = null;
+        this.musicVoiceChannel = null;
+        this.logChannel = null;
     }
 };
 __decorate([
@@ -24,19 +24,20 @@ __decorate([
     __metadata("design:type", Number)
 ], GuildSettings.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
+    typeorm_1.Column('varchar', { nullable: true }),
+    __metadata("design:type", Object)
 ], GuildSettings.prototype, "suggestionChannel", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], GuildSettings.prototype, "musicChannel", void 0);
+    typeorm_1.Column('varchar', { nullable: true }),
+    __metadata("design:type", Object)
+], GuildSettings.prototype, "musicTextChannel", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
+    typeorm_1.Column('varchar', { nullable: true }),
+    __metadata("design:type", Object)
+], GuildSettings.prototype, "musicVoiceChannel", void 0);
+__decorate([
+    typeorm_1.Column('varchar', { nullable: true }),
+    __metadata("design:type", Object)
 ], GuildSettings.prototype, "logChannel", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.Guild, guild => guild.settings),

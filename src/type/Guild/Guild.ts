@@ -20,7 +20,10 @@ export class Guild {
   @IsNumberString()
   dateCreated: string
 
-  @OneToOne(type => GuildSettings, guildSettings => guildSettings.guild)
+  @OneToOne(type => GuildSettings, guildSettings => guildSettings.guild, {
+    cascade: true,
+    onDelete: 'CASCADE'
+  })
   settings: GuildSettings
 
   constructor (guild?: Guild) {

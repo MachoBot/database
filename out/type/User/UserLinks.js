@@ -14,7 +14,8 @@ const class_validator_1 = require("class-validator");
 const _1 = require(".");
 let UserLinks = class UserLinks {
     constructor() {
-        this.steamId = '';
+        this.steamId = null;
+        this.githubId = null;
     }
 };
 __decorate([
@@ -22,17 +23,17 @@ __decorate([
     __metadata("design:type", Number)
 ], UserLinks.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
+    typeorm_1.Column('varchar', { nullable: true }),
     class_validator_1.IsString(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], UserLinks.prototype, "steamId", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
+    typeorm_1.Column('varchar', { nullable: true }),
     class_validator_1.IsString(),
     __metadata("design:type", Object)
 ], UserLinks.prototype, "githubId", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.User, user => user.balance),
+    typeorm_1.OneToOne(type => _1.User, user => user.links),
     __metadata("design:type", _1.User)
 ], UserLinks.prototype, "user", void 0);
 UserLinks = __decorate([
