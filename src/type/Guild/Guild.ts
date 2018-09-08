@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, OneToOne } from 'typeorm'
+import { Entity, PrimaryColumn, Column, OneToOne, JoinColumn } from 'typeorm'
 import { IsString, IsBoolean, IsNumberString } from 'class-validator'
 import { GuildSettings } from '.'
 
@@ -24,6 +24,7 @@ export class Guild {
     cascade: true,
     onDelete: 'CASCADE'
   })
+  @JoinColumn()
   settings: GuildSettings
 
   constructor (guild?: Guild) {

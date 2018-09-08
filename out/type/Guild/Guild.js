@@ -45,6 +45,7 @@ __decorate([
         cascade: true,
         onDelete: 'CASCADE'
     }),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", _1.GuildSettings)
 ], Guild.prototype, "settings", void 0);
 Guild = __decorate([
