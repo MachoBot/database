@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Column, Entity, OneToOne, JoinColumn } from 'typeorm'
+import { PrimaryGeneratedColumn, Entity, OneToOne, JoinColumn } from 'typeorm'
 import { User, UserGithubLinks, UserSteamLinks } from '.'
 
 @Entity()
@@ -24,5 +24,6 @@ export class UserLinks {
 
   constructor () {
     this.github = new UserGithubLinks()
+    this.steam = new UserSteamLinks()
   }
 }

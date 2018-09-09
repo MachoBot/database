@@ -10,38 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
+const class_validator_1 = require("class-validator");
 const _1 = require(".");
-let UserLinks = class UserLinks {
+let UserSteamLinks = class UserSteamLinks {
     constructor() {
-        this.github = new _1.UserGithubLinks();
+        this.userId = null;
+        this.token = null;
     }
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], UserLinks.prototype, "id", void 0);
+], UserSteamLinks.prototype, "id", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.UserSteamLinks, userSteamLinks => userSteamLinks.links, {
-        cascade: true,
-        onDelete: 'CASCADE'
-    }),
-    typeorm_1.JoinColumn(),
-    __metadata("design:type", _1.UserSteamLinks)
-], UserLinks.prototype, "steam", void 0);
+    typeorm_1.Column('varchar', { nullable: true }),
+    class_validator_1.IsString(),
+    __metadata("design:type", Object)
+], UserSteamLinks.prototype, "userId", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.UserGithubLinks, userGithubLinks => userGithubLinks.links, {
-        cascade: true,
-        onDelete: 'CASCADE'
-    }),
-    typeorm_1.JoinColumn(),
-    __metadata("design:type", _1.UserGithubLinks)
-], UserLinks.prototype, "github", void 0);
+    typeorm_1.Column('varchar', { nullable: true, select: false }),
+    class_validator_1.IsString(),
+    __metadata("design:type", Object)
+], UserSteamLinks.prototype, "token", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => _1.User, user => user.links),
-    __metadata("design:type", _1.User)
-], UserLinks.prototype, "user", void 0);
-UserLinks = __decorate([
+    typeorm_1.OneToOne(type => _1.UserLinks, userLinks => userLinks.steam),
+    __metadata("design:type", _1.UserLinks)
+], UserSteamLinks.prototype, "links", void 0);
+UserSteamLinks = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [])
-], UserLinks);
-exports.UserLinks = UserLinks;
+], UserSteamLinks);
+exports.UserSteamLinks = UserSteamLinks;

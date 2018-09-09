@@ -7,3 +7,5 @@ __export(require("./User"));
 __export(require("./UserBalance"));
 __export(require("./UserLevel"));
 __export(require("./UserLinks"));
+__export(require("./UserGithubLinks"));
+__export(require("./UserSteamLinks"));

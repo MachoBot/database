@@ -1,8 +1,8 @@
-import { User } from '.';
+import { User, UserGithubLinks, UserSteamLinks } from '.';
 export declare class UserLinks {
     id: number;
-    steamId: string | null;
-    githubId: string | null;
+    steam: UserSteamLinks;
+    github: UserGithubLinks;
     user: User;
     constructor();
 }
