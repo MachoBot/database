@@ -1,24 +1,28 @@
-import { PrimaryGeneratedColumn, Column, Entity, OneToOne } from 'typeorm'
-import { IsString } from 'class-validator'
-import { User } from '.'
+import { PrimaryGeneratedColumn, Column, Entity, OneToOne, JoinColumn } from 'typeorm'
+import { User, UserGithubLinks, UserSteamLinks } from '.'
 
 @Entity()
 export class UserLinks {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar', { nullable: true })
-  @IsString()
-  steamId: string | null
+  @OneToOne(type => UserSteamLinks, userSteamLinks => userSteamLinks.links, {
+    cascade: true,
+    onDelete: 'CASCADE'
+  })
+  @JoinColumn()
+  steam: UserSteamLinks
 
-  @Column('varchar', { nullable: true })
-  @IsString()
-  githubId: string | null
+  @OneToOne(type => UserGithubLinks, userGithubLinks => userGithubLinks.links, {
+    cascade: true,
+    onDelete: 'CASCADE'
+  })
+  @JoinColumn()
+  github: UserGithubLinks
 
   @OneToOne(type => User, user => user.links)
   user: User
 
   constructor () {
-    this.steamId = null
-    this.githubId = null
+    this.github = new UserGithubLinks()
   }
 }
