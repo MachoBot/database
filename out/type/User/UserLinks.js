@@ -14,6 +14,7 @@ const _1 = require(".");
 let UserLinks = class UserLinks {
     constructor() {
         this.github = new _1.UserGithubLinks();
+        this.steam = new _1.UserSteamLinks();
     }
 };
 __decorate([

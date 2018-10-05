@@ -5,6 +5,7 @@ export declare class GuildSettings {
     musicTextChannel: string | null;
     musicVoiceChannel: string | null;
     logChannel: string | null;
+    levelUpMessages: boolean;
     guild: Guild;
     constructor();
 }

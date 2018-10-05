@@ -17,6 +17,7 @@ let GuildSettings = class GuildSettings {
         this.musicTextChannel = null;
         this.musicVoiceChannel = null;
         this.logChannel = null;
+        this.levelUpMessages = true;
     }
 };
 __decorate([
@@ -39,6 +40,10 @@ __decorate([
     typeorm_1.Column('varchar', { nullable: true }),
     __metadata("design:type", Object)
 ], GuildSettings.prototype, "logChannel", void 0);
+__decorate([
+    typeorm_1.Column('boolean'),
+    __metadata("design:type", Boolean)
+], GuildSettings.prototype, "levelUpMessages", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.Guild, guild => guild.settings),
     __metadata("design:type", _1.Guild)

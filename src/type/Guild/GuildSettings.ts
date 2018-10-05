@@ -18,6 +18,9 @@ export class GuildSettings {
   @Column('varchar', { nullable: true })
   logChannel: string | null
 
+  @Column('boolean')
+  levelUpMessages: boolean
+
   @OneToOne(type => Guild, guild => guild.settings)
   guild: Guild
 
@@ -26,5 +29,6 @@ export class GuildSettings {
     this.musicTextChannel = null
     this.musicVoiceChannel = null
     this.logChannel = null
+    this.levelUpMessages = true
   }
 }
