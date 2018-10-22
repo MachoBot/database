@@ -21,6 +21,12 @@ export class GuildSettings {
   @Column('boolean')
   levelUpMessages: boolean
 
+  @Column('boolean')
+  voteSkipEnabled: boolean
+
+  @Column('boolean')
+  voteClearEnabled: boolean
+
   @OneToOne(type => Guild, guild => guild.settings)
   guild: Guild
 
@@ -30,5 +36,7 @@ export class GuildSettings {
     this.musicVoiceChannel = null
     this.logChannel = null
     this.levelUpMessages = true
+    this.voteSkipEnabled = true
+    this.voteClearEnabled = true
   }
 }
