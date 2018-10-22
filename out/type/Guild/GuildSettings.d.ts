@@ -6,6 +6,8 @@ export declare class GuildSettings {
     musicVoiceChannel: string | null;
     logChannel: string | null;
     levelUpMessages: boolean;
+    voteSkipEnabled: boolean;
+    voteClearEnabled: boolean;
     guild: Guild;
     constructor();
 }

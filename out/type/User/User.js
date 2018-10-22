@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const _1 = require(".");
+const __1 = require("..");
 let User = class User {
     constructor(user) {
         if (user) {
@@ -75,6 +76,10 @@ __decorate([
     typeorm_1.JoinColumn(),
     __metadata("design:type", _1.UserLinks)
 ], User.prototype, "links", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => __1.MusicPlaylist, musicPlaylist => musicPlaylist.user),
+    __metadata("design:type", Array)
+], User.prototype, "playlists", void 0);
 __decorate([
     typeorm_1.Column('boolean'),
     class_validator_1.IsBoolean(),

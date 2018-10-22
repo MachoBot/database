@@ -1,4 +1,5 @@
 import { UserBalance, UserLevel, UserLinks } from '.';
+import { MusicPlaylist } from '..';
 export declare class User {
     id: string;
     name: string;
@@ -9,6 +10,7 @@ export declare class User {
     balance: UserBalance;
     level: UserLevel;
     links: UserLinks;
+    playlists: MusicPlaylist[];
     admin: boolean;
     accessToken: string;
     constructor(user?: User);

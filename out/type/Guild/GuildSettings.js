@@ -18,6 +18,8 @@ let GuildSettings = class GuildSettings {
         this.musicVoiceChannel = null;
         this.logChannel = null;
         this.levelUpMessages = true;
+        this.voteSkipEnabled = true;
+        this.voteClearEnabled = true;
     }
 };
 __decorate([
@@ -44,6 +46,14 @@ __decorate([
     typeorm_1.Column('boolean'),
     __metadata("design:type", Boolean)
 ], GuildSettings.prototype, "levelUpMessages", void 0);
+__decorate([
+    typeorm_1.Column('boolean'),
+    __metadata("design:type", Boolean)
+], GuildSettings.prototype, "voteSkipEnabled", void 0);
+__decorate([
+    typeorm_1.Column('boolean'),
+    __metadata("design:type", Boolean)
+], GuildSettings.prototype, "voteClearEnabled", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.Guild, guild => guild.settings),
     __metadata("design:type", _1.Guild)

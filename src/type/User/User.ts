@@ -1,6 +1,7 @@
-import { PrimaryColumn, Column, OneToOne, Entity, JoinColumn } from 'typeorm'
+import { PrimaryColumn, Column, OneToOne, Entity, JoinColumn, OneToMany } from 'typeorm'
 import { IsString, IsBoolean, IsNumberString } from 'class-validator'
 import { UserBalance, UserLevel, UserLinks } from '.'
+import { MusicPlaylist } from '..'
 
 @Entity()
 export class User {
@@ -48,6 +49,9 @@ export class User {
   })
   @JoinColumn()
   links: UserLinks
+
+  @OneToMany(type => MusicPlaylist, musicPlaylist => musicPlaylist.user)
+  playlists: MusicPlaylist[]
 
   @Column('boolean')
   @IsBoolean()
