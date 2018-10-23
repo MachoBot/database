@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const __1 = require("..");
 const _1 = require(".");
+const class_validator_1 = require("class-validator");
 let MusicPlaylist = class MusicPlaylist {
     constructor(playlist) {
         if (playlist) {
@@ -23,6 +24,11 @@ __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], MusicPlaylist.prototype, "id", void 0);
+__decorate([
+    typeorm_1.Column('varchar'),
+    class_validator_1.IsString(),
+    __metadata("design:type", String)
+], MusicPlaylist.prototype, "name", void 0);
 __decorate([
     typeorm_1.OneToMany(type => _1.MusicSong, musicSong => musicSong.playlists),
     __metadata("design:type", Array)
