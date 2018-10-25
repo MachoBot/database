@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Column, Entity, ManyToOne, OneToMany } from 'typeorm'
+import { PrimaryGeneratedColumn, Column, Entity, ManyToOne, OneToMany, JoinColumn } from 'typeorm'
 import { User } from '..'
 import { MusicSong } from '.'
 import { IsString } from 'class-validator'
@@ -12,6 +12,7 @@ export class MusicPlaylist {
   name: string
 
   @OneToMany(type => MusicSong, musicSong => musicSong.playlists, { cascade: true })
+  @JoinColumn()
   songs: MusicSong[]
 
   @ManyToOne(type => User, user => user.playlists)

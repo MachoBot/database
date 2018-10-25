@@ -31,6 +31,7 @@ __decorate([
 ], MusicPlaylist.prototype, "name", void 0);
 __decorate([
     typeorm_1.OneToMany(type => _1.MusicSong, musicSong => musicSong.playlists, { cascade: true }),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Array)
 ], MusicPlaylist.prototype, "songs", void 0);
 __decorate([
