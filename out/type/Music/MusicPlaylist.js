@@ -30,7 +30,7 @@ __decorate([
     __metadata("design:type", String)
 ], MusicPlaylist.prototype, "name", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => _1.MusicSong, musicSong => musicSong.playlists),
+    typeorm_1.OneToMany(type => _1.MusicSong, musicSong => musicSong.playlists, { cascade: true }),
     __metadata("design:type", Array)
 ], MusicPlaylist.prototype, "songs", void 0);
 __decorate([

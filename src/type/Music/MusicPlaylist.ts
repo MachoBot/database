@@ -11,7 +11,7 @@ export class MusicPlaylist {
   @IsString()
   name: string
 
-  @OneToMany(type => MusicSong, musicSong => musicSong.playlists)
+  @OneToMany(type => MusicSong, musicSong => musicSong.playlists, { cascade: true })
   songs: MusicSong[]
 
   @ManyToOne(type => User, user => user.playlists)
