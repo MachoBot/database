@@ -77,7 +77,11 @@ __decorate([
     __metadata("design:type", _1.UserLinks)
 ], User.prototype, "links", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => __1.MusicPlaylist, musicPlaylist => musicPlaylist.user),
+    typeorm_1.OneToMany(type => __1.MusicPlaylist, musicPlaylist => musicPlaylist.user, {
+        cascade: true,
+        onDelete: 'CASCADE'
+    }),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Array)
 ], User.prototype, "playlists", void 0);
 __decorate([

@@ -50,7 +50,11 @@ export class User {
   @JoinColumn()
   links: UserLinks
 
-  @OneToMany(type => MusicPlaylist, musicPlaylist => musicPlaylist.user)
+  @OneToMany(type => MusicPlaylist, musicPlaylist => musicPlaylist.user, {
+    cascade: true,
+    onDelete: 'CASCADE'
+  })
+  @JoinColumn()
   playlists: MusicPlaylist[]
 
   @Column('boolean')
