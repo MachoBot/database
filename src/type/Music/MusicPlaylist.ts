@@ -11,7 +11,10 @@ export class MusicPlaylist {
   @IsString()
   name: string
 
-  @OneToMany(type => MusicSong, musicSong => musicSong.playlists, { cascade: true })
+  @OneToMany(type => MusicSong, musicSong => musicSong.playlists, {
+    cascade: true,
+    onDelete: 'CASCADE'
+  })
   @JoinColumn()
   songs: MusicSong[]
 
