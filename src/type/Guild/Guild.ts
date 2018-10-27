@@ -1,6 +1,6 @@
-import { Entity, PrimaryColumn, Column, OneToOne, JoinColumn } from 'typeorm'
+import { Entity, PrimaryColumn, Column, OneToOne, JoinColumn, OneToMany } from 'typeorm'
 import { IsString, IsBoolean, IsNumberString } from 'class-validator'
-import { GuildSettings } from '.'
+import { GuildSettings, GuildTag } from '.'
 
 @Entity()
 export class Guild {
@@ -26,6 +26,13 @@ export class Guild {
   })
   @JoinColumn()
   settings: GuildSettings
+
+  @OneToMany(type => GuildTag, guildTag => guildTag.guild, {
+    cascade: true,
+    onDelete: 'CASCADE'
+  })
+  @JoinColumn()
+  tags: GuildTag[]
 
   constructor (guild?: Guild) {
     if (guild) {

@@ -48,6 +48,14 @@ __decorate([
     typeorm_1.JoinColumn(),
     __metadata("design:type", _1.GuildSettings)
 ], Guild.prototype, "settings", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => _1.GuildTag, guildTag => guildTag.guild, {
+        cascade: true,
+        onDelete: 'CASCADE'
+    }),
+    typeorm_1.JoinColumn(),
+    __metadata("design:type", Array)
+], Guild.prototype, "tags", void 0);
 Guild = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [Guild])
